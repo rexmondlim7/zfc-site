@@ -137,10 +137,11 @@ body::after{content:"";position:fixed;inset:0;z-index:9;pointer-events:none;opac
 .service p{margin-top:9px;max-width:30em;color:var(--ash)}
 
 /* trainers: an honours board */
-.trainers{display:grid;gap:56px}
+.trainers{display:grid;gap:48px}
 .trainer{display:grid;row-gap:18px;align-content:start}
 /* each cut-out stands on black with one warm light behind the head and shoulders, and sinks into the dark at the bottom of its frame */
-.portrait{position:relative;aspect-ratio:1/1.08;overflow:hidden;isolation:isolate;background:
+/* on a phone the portrait is a small centred plate, not a full-width face */
+.portrait{position:relative;width:min(52%,200px);margin-inline:auto;aspect-ratio:3/4;overflow:hidden;isolation:isolate;background:
   radial-gradient(ellipse 34% 26% at 50% 27%,rgba(var(--glow-rgb),.20),transparent 100%),
   radial-gradient(ellipse 82% 64% at 50% 34%,rgba(var(--gold-rgb),.30),rgba(var(--gold-rgb),.09) 55%,transparent 80%),#000}
 .portrait img{width:100%;height:100%;object-fit:cover;object-position:50% 0}
@@ -246,7 +247,7 @@ body::after{content:"";position:fixed;inset:0;z-index:9;pointer-events:none;opac
   .trainer{row-gap:20px}
   /* the three cards share their rows, so a name that runs to two lines pushes all three lists down together and the first lines sit level */
   @supports (grid-template-rows:subgrid){.trainer{grid-row:span 3;grid-template-rows:subgrid}}
-  .portrait{aspect-ratio:3/4}
+  .portrait{width:auto;margin-inline:0}
   .trainer-name{font-size:clamp(.92rem,1.95vw,1.35rem);overflow-wrap:normal}
   .panel{padding:47px 30px 30px}
   .partners{grid-template-columns:1fr 1fr;gap:24px}
